@@ -1,4 +1,8 @@
 #!/bin/bash
+sudo apt-get -y update
+sudo apt-get -y upgrade
+
+
 sudo apt-get install -y libcurl4-openssl-dev
 sudo apt-get install -y libssl-dev
 sudo apt-get install -y jq
@@ -13,6 +17,17 @@ sudo apt-get install -y python-dnspython
 sudo apt-get install -y git
 sudo apt-get install -y rename
 sudo apt-get install -y xargs
+
+echo "installing bash_profile aliases from recon_profile"
+git clone https://github.com/nahamsec/recon_profile.git
+cd recon_profile
+cat bash_profile >> ~/.bash_profile
+source ~/.bash_profile
+cd ~/tools/
+echo "done"
+
+
+
 #install go
 if [[ -z "$GOPATH" ]];then
 echo "It looks like go is not installed, would you like to install it now"
@@ -45,9 +60,18 @@ select choice in "${choices[@]}"; do
 done
 fi
 
+
+#Don't forget to set up AWS credentials!
+echo "Don't forget to set up AWS credentials!"
+apt install -y awscli
+echo "Don't forget to set up AWS credentials!"
+
+
+
 #create a tools folder in ~/
-mkdir ~/ali
-cd ~/ali/
+mkdir ~/tools
+cd ~/tools/
+
 #install gospider
 echo "Installing gospider"
 go get -u github.com/jaeles-project/gospider
@@ -84,16 +108,17 @@ git clone https://github.com/gwen001/github-search.git
 cd ~/tools/
 echo "done"
 
+echo "downloading Seclists"
+cd ~/tools/
+git clone https://github.com/danielmiessler/SecLists.git
+cd ~/tools/SecLists/Discovery/DNS/
+##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
+cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
+cd ~/tools/
+echo "done"
+
+
+
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 ls -la
 echo "One last time: don't forget to set up AWS credentials in ~/.aws/!"
-
-
-
-
-
-
-
-
-
-
