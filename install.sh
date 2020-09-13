@@ -1,8 +1,4 @@
 #!/bin/bash
-sudo apt-get -y update
-sudo apt-get -y upgrade
-
-
 sudo apt-get install -y libcurl4-openssl-dev
 sudo apt-get install -y libssl-dev
 sudo apt-get install -y jq
@@ -17,17 +13,6 @@ sudo apt-get install -y python-dnspython
 sudo apt-get install -y git
 sudo apt-get install -y rename
 sudo apt-get install -y xargs
-
-echo "installing bash_profile aliases from recon_profile"
-git clone https://github.com/nahamsec/recon_profile.git
-cd recon_profile
-cat bash_profile >> ~/.bash_profile
-source ~/.bash_profile
-cd ~/ali/
-echo "done"
-
-
-
 #install go
 if [[ -z "$GOPATH" ]];then
 echo "It looks like go is not installed, would you like to install it now"
@@ -60,17 +45,14 @@ select choice in "${choices[@]}"; do
 done
 fi
 
-
-#Don't forget to set up AWS credentials!
-echo "Don't forget to set up AWS credentials!"
-apt install -y awscli
-echo "Don't forget to set up AWS credentials!"
-
-
-
 #create a ali folder in ~/
 mkdir ~/ali
 cd ~/ali/
+#install gospider
+echo "Installing gospider"
+go get -u github.com/jaeles-project/gospider
+cd ~/ali/
+echo "done"
 
 #install hakrawler
 echo "Installing hakrawler"
@@ -81,7 +63,7 @@ echo "done"
 #install SubDomainizer
 echo "Installing SubDomainizer"
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
-cd SubDomainizer
+cd SubDomainizer*
 pip3 install -r requirements.txt
 cd ~/ali/
 echo "done"
@@ -90,7 +72,7 @@ echo "done"
 #install subfinder
 echo "Installing subfinder"
 git clone https://github.com/projectdiscovery/subfinder.git
-cd subfinder/cmd/subfinder
+cd subfinder/cmd/subfinder*
 go build .
 mv subfinder /usr/local/bin/
 cd ~/ali/
@@ -102,18 +84,35 @@ git clone https://github.com/gwen001/github-search.git
 cd ~/ali/
 echo "done"
 
+#nuclei
+echo -e "Installing nuclei"
+cd ~/ali/
+go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+echo -e "Done Install nuclei"
 
-echo "downloading Seclists"
+#qsreplace
+echo -e "Installing qsreplace"
 cd ~/ali/
-git clone https://github.com/danielmiessler/SecLists.git
-cd ~/ali/SecLists/Discovery/DNS/
-##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
-cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
-cd ~/ali/
-echo "done"
+go get -u github.com/tomnomnom/qsreplace
+echo -e "Done Install qsreplace"
+
+#httprobe
+echo -e "installing httprobe"
+go get -u github.com/tomnomnom/httprobe 
+echo -e "Done install httprobe"
 
 
 
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All ali are set up in ~/ali"
 ls -la
 echo "One last time: don't forget to set up AWS credentials in ~/.aws/!"
+
+
+
+
+
+
+
+
+
+
