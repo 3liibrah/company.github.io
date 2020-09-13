@@ -1,7 +1,7 @@
 ##!/bin/bash#starting 
 GoSpider
 
-gospider -s $1 -o domains.txt
+#gospider -s $1 -o domains.txt#
 
 #hakrawler
 
