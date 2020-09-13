@@ -1,28 +1,15 @@
 #!/bin/bash
-sudo apt-get install -y libcurl4-openssl-dev
-sudo apt-get install -y libssl-dev
-sudo apt-get install -y jq
-sudo apt-get install -y ruby-full
-sudo apt-get install -y libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
-sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
-sudo apt-get install -y python-setupali
-sudo apt-get install -y libldns-dev
-sudo apt-get install -y python3-pip
-sudo apt-get install -y python-pip
-sudo apt-get install -y python-dnspython
-sudo apt-get install -y git
-sudo apt-get install -y rename
-sudo apt-get install -y xargs
+
 
 
 #create a ali folder in ~/
 mkdir ~/ali
 cd ~/ali/
 #install gospider
-echo "Installing gospider"
-go get -u github.com/jaeles-project/gospider
-cd ~/ali/
-echo "done"
+#echo "Installing gospider"
+#go get -u github.com/jaeles-project/gospider
+#cd ~/ali/#
+#echo "done"#
 
 #install hakrawler
 echo "Installing hakrawler"
@@ -53,6 +40,11 @@ echo "Installing github-search"
 git clone https://github.com/gwen001/github-search.git
 cd ~/ali/
 echo "done"
+#Subdomain Takeover Scan via subzy
+cd ~/tools/
+echo -e "Installing Subzy"
+go get -u -v github.com/lukasikic/subzy
+echo -e "Done Install Subzy"
 
 #nuclei
 echo -e "Installing nuclei"
