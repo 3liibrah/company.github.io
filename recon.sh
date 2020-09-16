@@ -33,6 +33,10 @@ cd github-search/python3 github-subdomains.py -t "3e1aa2e3f7951af257c881698aeb9d
 amass enum -brute -d $1  -o domains.txt 
 
 
+#subdomaintakeover
+SubOver -l domains.txt
+
+
 #removing duplicate entries
 
 sort -u domains.txt  | uniq 
