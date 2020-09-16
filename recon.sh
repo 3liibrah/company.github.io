@@ -39,7 +39,7 @@ SubOver -l domains.txt
 
 #removing duplicate entries
 
-sort -u domains.txt  | uniq 
+sort domains.txt  | uniq 
 
 #checking for alive domains
 
