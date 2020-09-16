@@ -17,6 +17,12 @@ go get github.com/hakluke/hakrawler
 cd ~/ali/
 echo "done"
 
+#takeover
+echo "Installing takeover"
+wget -q https://raw.githubusercontent.com/m4ll0k/takeover/master/takeover.py
+cd ~/ali/
+echo "done"
+
 #install SubOver
 echo "Installing hakrawler"
 go get github.com/Ice3man543/SubOver
