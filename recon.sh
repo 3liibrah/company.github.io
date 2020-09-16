@@ -35,7 +35,7 @@ amass enum -brute -d $1  -o domains.txt
 
 #removing duplicate entries
 
-sort -u domains.txt -o domains.txt | uniq 
+sort -u domains.txt  | uniq 
 
 #checking for alive domains
 
