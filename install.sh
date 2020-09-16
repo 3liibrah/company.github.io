@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 #create a ali folder in ~/
 mkdir ~/ali
 cd ~/ali/
@@ -11,6 +9,32 @@ cd ~/ali/
 #cd ~/ali/#
 #echo "done"#
 
+#anew
+go get -u github.com/tomnomnom/anew
+echo "done"
+#qsreplace
+go get -u github.com/tomnomnom/qsreplace
+echo "done"
+#gospider
+go get -u github.com/jaeles-project/gospider
+echo "done"
+#chaos
+GO111MODULE=on go get -u github.com/projectdiscovery/chaos-client/cmd/chaos
+echo "done"
+#unew
+go get -u github.com/dwisiswant0/unew
+echo "done"
+#gf
+go get -u github.com/tomnomnom/gf
+echo 'source $GOPATH/src/github.com/tomnomnom/gf/gf-completion.bash' >> ~/.bashrc
+cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
+echo "done"
+#install findomain
+echo "Installing findomain
+wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
+chmod +x findomain-linux
+cd ~/ali/
+echo "done"
 #install hakrawler
 echo "Installing hakrawler"
 go get github.com/hakluke/hakrawler
