@@ -3,7 +3,7 @@ GoSpider
 
 #gospider -s $1 -o domains.txt#
 
-#hakrawler
+
 
 ~/go/bin/assetfinder --subs-only $1 | tee -a domains.txt
 
