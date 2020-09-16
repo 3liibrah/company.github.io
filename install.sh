@@ -24,6 +24,12 @@ go get github.com/hakluke/hakrawler
 cd ~/ali/
 echo "done"
 
+#install SubOver
+echo "Installing hakrawler"
+go get github.com/Ice3man543/SubOver
+cd ~/ali/
+echo "done"
+
 #anew
 go get -u github.com/tomnomnom/anew
 echo "done"
