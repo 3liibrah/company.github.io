@@ -3,9 +3,10 @@
 #create a ali folder in ~/
 mkdir ~/ali
 cd ~/ali/
-#install gospider
+
+#install gospider#
 #echo "Installing gospider"
-#go get -u github.com/jaeles-project/gospider
+#go get -u github.com/jaeles-project/gospider#
 #cd ~/ali/#
 #echo "done"#
 
@@ -88,7 +89,7 @@ cd ~/ali/
 echo "done"
 
 #Subdomain Takeover Scan via subzy
-cd ~/tools/
+cd ~/ali/
 echo -e "Installing Subzy"
 go get -u -v github.com/lukasikic/subzy
 echo -e "Done Install Subzy"
