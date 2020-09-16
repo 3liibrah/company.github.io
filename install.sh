@@ -4,16 +4,8 @@
 mkdir ~/ali
 cd ~/ali/
 
-#install gospider#
-#echo "Installing gospider"
-#go get -u github.com/jaeles-project/gospider#
-#cd ~/ali/#
-#echo "done"#
-
-
-
 #install findomain
-echo "Installing findomain
+echo "Installing findomain"
 wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
 chmod +x findomain-linux
 cd ~/ali/
