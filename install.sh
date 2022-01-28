@@ -14,32 +14,20 @@ echo "done"
 
 #install hakrawler
 echo "Installing hakrawler"
-go get github.com/hakluke/hakrawler
-cd ~/ali/
-echo "done"
-
-#takeover
-echo "Installing takeover"
-wget -q https://raw.githubusercontent.com/m4ll0k/takeover/master/takeover.py
-cd ~/ali/
-echo "done"
-
-#install SubOver
-echo "Installing hakrawler"
-go get github.com/Ice3man543/SubOver
+go install github.com/hakluke/hakrawler@latest
 cd ~/ali/
 echo "done"
 
 #anew
-go get -u github.com/tomnomnom/anew
+go install github.com/tomnomnom/anew@latest
 echo "done"
 
 #qsreplace
-go get -u github.com/tomnomnom/qsreplace
+go install github.com/tomnomnom/qsreplace@latest
 echo "done"
 
 #gospider
-go get -u github.com/jaeles-project/gospider
+go install github.com/jaeles-project/gospider@latest
 echo "done"
 
 #chaos
@@ -47,19 +35,17 @@ GO111MODULE=on go get -u github.com/projectdiscovery/chaos-client/cmd/chaos
 echo "done"
 
 #unew
-go get -u github.com/dwisiswant0/unew
+go install github.com/dwisiswant0/unew@latest
 echo "done"
 
 #gf
-go get -u github.com/tomnomnom/gf
+go install github.com/tomnomnom/gf@latest
 echo 'source $GOPATH/src/github.com/tomnomnom/gf/gf-completion.bash' >> ~/.bashrc
 cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
 echo "done"
 
-#install nuclei
-git clone https://github.com/projectdiscovery/nuclei.git
-cd nuclei/cmd/nuclei/
-go build; mv nuclei /usr/local/bin/
+
+#nuclei -tampate
 git clone https://github.com/projectdiscovery/nuclei-templates.git
 cd ~/ali/
 echo "done"
@@ -75,10 +61,7 @@ echo "done"
 
 #install subfinder
 echo "Installing subfinder"
-git clone https://github.com/projectdiscovery/subfinder.git
-cd subfinder/cmd/subfinder*
-go build .
-mv subfinder /usr/local/bin/
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 cd ~/ali/
 echo "done"
 
@@ -90,19 +73,17 @@ echo "done"
 
 #Subdomain Takeover Scan via subzy
 cd ~/ali/
-echo -e "Installing Subzy"
 go get -u -v github.com/lukasikic/subzy
-echo -e "Done Install Subzy"
-
-#httprobe
-go get -u github.com/tomnomnom/httprobe 
-echo -e "Done install httprobe"
+go install -v github.com/lukasikic/subzy@latest
+cd ~/ali/
+echo "done"
 
 
 
-echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All ali are set up in ~/ali"
-ls -la
-echo "One last time: don't forget to set up AWS credentials in ~/.aws/!"
+#httpx
+#cuz i install  it
+#pip install httpx
+
 
 
 
