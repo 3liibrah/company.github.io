@@ -38,11 +38,7 @@ echo "done"
 go install github.com/dwisiswant0/unew@latest
 echo "done"
 
-#gf
-go install github.com/tomnomnom/gf@latest
-echo 'source $GOPATH/src/github.com/tomnomnom/gf/gf-completion.bash' >> ~/.bashrc
-cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
-echo "done"
+
 
 
 #nuclei -tampate
